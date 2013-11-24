@@ -1,10 +1,18 @@
 $(function () {
 
-    var template = Handlebars.compile($('#events_template').text());
+    var templateEvents = Handlebars.compile($('#events_template').text());
+    var templateEvent  = Handlebars.compile($('#event_template').text());
 
     function displayEvents(data) {
-        $('#events').empty().append(template({events: data}));
+        $('#content').empty().append(templateEvents({events: data}));
     };
+
+    function displayEvent(data) {
+        $('#content').empty().append(templateEvent(data));
+    };
+
+    var call4paperzDataManager = AeroGear.DataManager("events");
+    var EventStore = call4paperzDataManager.stores["events"];
 
     var call4paperzPipeline = AeroGear.Pipeline([
         {
@@ -19,11 +27,19 @@ $(function () {
     call4paperzPipeline.pipes[ "events" ].read({
         jsonp: true,
         success: function (data) {
+            EventStore.save( data );
             displayEvents(data);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log(errorThrown);
         }
+    });
+
+    $(document).on("click", ".event", function(e){
+        e.preventDefault();
+        var recordID = parseInt($(this).attr('href').replace('#',''));
+        var selectedRecord = EventStore.read(recordID)[0];
+        displayEvent(selectedRecord);
     });
 
 });

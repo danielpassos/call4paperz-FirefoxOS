@@ -23,14 +23,38 @@
         {{#each events}}
         <tr>
             <td><img src="{{picture.thumb.url}}" width="50" height="50"/></td>
-            <td>{{name}}</td>
+            <td><a href="#{{id}}" class="event">{{name}}</a></td>
             <td>{{proposals_count}} proposals <br/>{{votes_count}} votes</td>
         </tr>
         {{/each}}
     </table>
 </script>
 
-<div id="events">
+<script type="text/x-handlebars-template" id="event_template">
+    <img src="{{picture.thumb.url}}" width="50" height="50"/>
+    <p>{{name}}</p>
+    <p>{{description}}</p>
+    <table>
+        <tr>
+            <td>Data:</td>
+            <td>{{occurs_at}}</td>
+        </tr>
+        <tr>
+            <td>URL:</td>
+            <td>{{url}}</td>
+        </tr>
+        <tr>
+            <td>Twitter:</td>
+            <td>{{twitter}}</td>
+        </tr>
+        <tr>
+            <td>Organize:</td>
+            <td>{{user.name}}</td>
+        </tr>
+    </table>
+</script>
+
+<div id="content">
     <progress></progress>
 </div>
 
