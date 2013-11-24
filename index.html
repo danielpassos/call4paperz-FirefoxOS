@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="description" content="">
+    <meta name="author" content="Daniel Passos">
+
+    <title>Call4Paperz</title>
+
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/aerogear.custom.min.js"></script>
+    <script src="js/handlebars-1.0.0.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+
+<script type="text/x-handlebars-template" id="events_template">
+    <table>
+        {{#each events}}
+        <tr>
+            <td><img src="{{picture.thumb.url}}" width="50" height="50" /></td>
+            <td class="x">{{name}}</td>
+            <td>{{proposals_count}} proposals <br />{{votes_count}} votes</td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
+
+<div id="events"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+    "version": "1.0",
+    "name": "Call4Paperz",
+    "launch_path": "index.html",
+    "description": "Call4Paperz",
+    "icons": {
+         "64":  "/images/icons/64.png"
+    },
+    "developer": {
+        "name": "Daniel Passos",
+        "url": "http://passos.me"
+    },
+    "default_locale": "en"
+}
