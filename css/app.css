@@ -1,4 +1,49 @@
-# {
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 1.1em
+/* ----------------------------------
+ * Progress + activities
+ * ----------------------------------
+ */
+
+progress {
+    position: absolute;
+    left: 45%;
+    top: 45%;
+}
+
+progress:not([value]) {
+    background: url(../images/default.png) no-repeat center center / 100% auto;
+    animation: 0.9s rotate infinite steps(30);
+    width: 2.9rem;
+    height: 2.9rem;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+progress:not([value])::-moz-progress-bar {
+    background: none;
+}
+
+progress[value] {
+    width: 100%;
+    background: #333;
+    border: none;
+    border-radius: 0.3rem;
+    height: 0.3rem;
+    display: block;
+}
+
+progress[value]::-moz-progress-bar {
+    background: #01c5ed;
+    border-radius: 0;
+}
+
+/* Animations */
+@keyframes rotate {
+    from { transform: rotate(1deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes move {
+    from { background-position: 0 0; }
+    to   { background-position: 1rem 0; }
 }
