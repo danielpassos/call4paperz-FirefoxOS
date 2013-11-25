@@ -27,7 +27,7 @@
             {{else}}
             <td><img src="images/no-image-cropped.png" width="70" height="70"/></td>
             {{/ifIsValidImageURL}}
-            <td><a href="#{{id}}" class="event">{{name}}</a></td>
+            <td><a href="#{{id}}" class="event-link">{{name}}</a></td>
             <td>{{proposals_count}} proposals <br/>{{votes_count}} votes</td>
         </tr>
         {{/each}}
@@ -35,7 +35,8 @@
 </script>
 
 <script type="text/x-handlebars-template" id="event_template">
-    <p><a href="#{{id}}" class="proposals">Show proposals</a></p>
+    <p><a href="#{{id}}" class="proposals-link">Show proposals</a></p>
+    <p><a href="/" class="events-link">Back</a></p>
     {{#ifIsValidImageURL picture.cropped.url}}
     <img src="{{picture.cropped.url}}"/>
     {{else}}
@@ -64,6 +65,7 @@
 </script>
 
 <script type="text/x-handlebars-template" id="proposals_template">
+    <p><a href="#{{event.id}}" class="event-link">Back</a></p>
     <table>
         {{#each event.proposals}}
         <tr>

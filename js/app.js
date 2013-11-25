@@ -44,14 +44,19 @@ $(function () {
         }
     });
 
-    $(document).on("click", ".event", function (e) {
+    $(document).on("click", ".events-link", function (e) {
+        e.preventDefault();
+        displayEvents(EventStore.read());
+    });
+
+    $(document).on("click", ".event-link", function (e) {
         e.preventDefault();
         var recordID = parseInt($(this).attr('href').replace('#', ''));
         var selectedRecord = EventStore.read(recordID)[0];
         displayEvent(selectedRecord);
     });
 
-    $(document).on("click", ".proposals", function (e) {
+    $(document).on("click", ".proposals-link", function (e) {
         e.preventDefault();
         var recordID = parseInt($(this).attr('href').replace('#', ''));
         var selectedRecord = EventStore.read(recordID)[0];
