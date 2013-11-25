@@ -1,5 +1,9 @@
 $(function () {
 
+    Handlebars.registerHelper('ifIsValidImageURL', function(imageURL,  options) {
+        return (imageURL.indexOf('/assets/no-image') != -1) ? options.inverse(this) : options.fn(this);
+    });
+
     var templateEvents = Handlebars.compile($('#events_template').text());
     var templateEvent = Handlebars.compile($('#event_template').text());
     var templateProposals = Handlebars.compile($('#proposals_template').text());

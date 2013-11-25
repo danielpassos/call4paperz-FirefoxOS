@@ -22,7 +22,11 @@
     <table>
         {{#each events}}
         <tr>
-            <td><img src="{{picture.thumb.url}}" width="50" height="50"/></td>
+            {{#ifIsValidImageURL picture.thumb.url}}
+            <td><img src="{{picture.thumb.url}}" width="70" height="70" /></td>
+            {{else}}
+            <td><img src="images/no-image-cropped.png" width="70" height="70"/></td>
+            {{/ifIsValidImageURL}}
             <td><a href="#{{id}}" class="event">{{name}}</a></td>
             <td>{{proposals_count}} proposals <br/>{{votes_count}} votes</td>
         </tr>
@@ -31,8 +35,12 @@
 </script>
 
 <script type="text/x-handlebars-template" id="event_template">
-    <a href="#{{id}}" class="proposals">Show proposals</a>
-    <img src="{{picture.thumb.url}}" width="50" height="50"/>
+    <p><a href="#{{id}}" class="proposals">Show proposals</a></p>
+    {{#ifIsValidImageURL picture.cropped.url}}
+    <img src="{{picture.cropped.url}}"/>
+    {{else}}
+    <img src="images/no-image-cropped.png"/>
+    {{/ifIsValidImageURL}}
     <p>{{name}}</p>
     <p>{{description}}</p>
     <table>
