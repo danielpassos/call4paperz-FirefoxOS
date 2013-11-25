@@ -31,6 +31,7 @@
 </script>
 
 <script type="text/x-handlebars-template" id="event_template">
+    <a href="#{{id}}" class="proposals">Show proposals</a>
     <img src="{{picture.thumb.url}}" width="50" height="50"/>
     <p>{{name}}</p>
     <p>{{description}}</p>
@@ -51,6 +52,18 @@
             <td>Organize:</td>
             <td>{{user.name}}</td>
         </tr>
+    </table>
+</script>
+
+<script type="text/x-handlebars-template" id="proposals_template">
+    <table>
+        {{#each event.proposals}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{acceptance_points}}</td>
+            <td>{{user.name}}</td>
+        </tr>
+        {{/each}}
     </table>
 </script>
 
