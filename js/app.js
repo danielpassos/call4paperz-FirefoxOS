@@ -67,4 +67,9 @@ $(function () {
         displayProposals(selectedRecord);
     });
 
+    $(document).on("click", ".proposal-description", function (e) {
+        e.preventDefault();
+        alert($(this).data('description'));
+    });
+
 });
