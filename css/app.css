@@ -15,7 +15,7 @@ body {
 }
 
 .item > div {
-    background-color: #ccc;
+    background-color: #fff;
     vertical-align:middle;
     padding: 8px 5px 5px 5px;
 }
@@ -44,6 +44,35 @@ body {
 .event-title {
     font-size: 18px;
     font-weight: bold;
+}
+
+.proposal-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #F00;
+}
+
+.votes {
+    position: relative;
+    padding: 5px;
+    width: 50px;
+    height:35px;
+    margin: 20 0 40px 20px;
+    padding-top: 15px;
+    border: 1px dotted #bababa;
+    color: white;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.red {
+    background-color: #F00
+}
+
+.green {
+    background-color: #0F0
 }
 
 /* ----------------------------------

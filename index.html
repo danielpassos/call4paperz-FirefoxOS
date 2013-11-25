@@ -30,7 +30,7 @@
                 {{/ifIsValidImageURL}}
             </div>
             <div class="itemBody"><a href="#{{id}}" class="event-link">{{name}}</a></div>
-            <div class="itemBody">{{proposals_count}} prop. <br />{{votes_count}} votes</div>
+            <div class="itemBody">{{proposals_count}} prop. <br/>{{votes_count}} votes</div>
         </div>
         {{/each}}
     </div>
@@ -68,15 +68,23 @@
 
 <script type="text/x-handlebars-template" id="proposals_template">
     <p><a href="#{{event.id}}" class="event-link">Back</a></p>
-    <table>
+    <div class="divContainer">
         {{#each event.proposals}}
-        <tr>
-            <td>{{name}}</td>
-            <td>{{acceptance_points}}</td>
-            <td>{{user.name}}</td>
-        </tr>
+        <div class="item">
+            <div class="itemBody">
+                <p class="proposal-title">{{name}}</p>
+                <p>{{user.name}}</p>
+            </div>
+            <div class="itemBody">
+                {{#ifPositive acceptance_points}}
+                <div class="votes green">{{acceptance_points}}</div>
+                {{else}}
+                <div class="votes red">{{acceptance_points}}</div>
+                {{/ifPositive}}
+            </div>
+        </div>
         {{/each}}
-    </table>
+    </div>
 </script>
 
 <div id="content">

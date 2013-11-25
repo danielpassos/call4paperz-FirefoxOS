@@ -4,6 +4,10 @@ $(function () {
         return (imageURL.indexOf('/assets/no-image') != -1) ? options.inverse(this) : options.fn(this);
     });
 
+    Handlebars.registerHelper('ifPositive', function(number,  options) {
+        return (number >= 0) ? options.fn(this) : options.inverse(this);
+    });
+
     var templateEvents = Handlebars.compile($('#events_template').text());
     var templateEvent = Handlebars.compile($('#event_template').text());
     var templateProposals = Handlebars.compile($('#proposals_template').text());
