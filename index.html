@@ -40,11 +40,11 @@
     <p><a href="#{{id}}" class="proposals-link">Show proposals</a></p>
     <p><a href="/" class="events-link">Back</a></p>
     {{#ifIsValidImageURL picture.cropped.url}}
-    <img src="{{picture.cropped.url}}"/>
+    <img src="{{picture.cropped.url}}" class="event-logo"/>
     {{else}}
-    <img src="images/no-image-cropped.png"/>
+    <img src="images/no-image-cropped.png" class="event-logo"/>
     {{/ifIsValidImageURL}}
-    <p>{{name}}</p>
+    <p class="event-title">{{name}}</p>
     <p>{{description}}</p>
     <table>
         <tr>

@@ -34,6 +34,18 @@ body {
     display: table-cell;
 }
 
+.event-logo, .event-title {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.event-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 /* ----------------------------------
  * Progress + activities
  * ----------------------------------
