@@ -19,19 +19,21 @@
 <body>
 
 <script type="text/x-handlebars-template" id="events_template">
-    <table>
+    <div class="divContainer">
         {{#each events}}
-        <tr>
-            {{#ifIsValidImageURL picture.thumb.url}}
-            <td><img src="{{picture.thumb.url}}" width="70" height="70" /></td>
-            {{else}}
-            <td><img src="images/no-image-cropped.png" width="70" height="70"/></td>
-            {{/ifIsValidImageURL}}
-            <td><a href="#{{id}}" class="event-link">{{name}}</a></td>
-            <td>{{proposals_count}} proposals <br/>{{votes_count}} votes</td>
-        </tr>
+        <div class="item">
+            <div class="itemBody">
+                {{#ifIsValidImageURL picture.thumb.url}}
+                <img src="{{picture.thumb.url}}" width="60" height="60"/>
+                {{else}}
+                <img src="images/no-image-cropped.png" width="60" height="60"/>
+                {{/ifIsValidImageURL}}
+            </div>
+            <div class="itemBody"><a href="#{{id}}" class="event-link">{{name}}</a></div>
+            <div class="itemBody">{{proposals_count}} prop. <br />{{votes_count}} votes</div>
+        </div>
         {{/each}}
-    </table>
+    </div>
 </script>
 
 <script type="text/x-handlebars-template" id="event_template">

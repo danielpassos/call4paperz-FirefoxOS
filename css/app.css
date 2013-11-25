@@ -1,3 +1,39 @@
+body {
+    font-family: helvetica;
+    font-size: 14px;
+    background-color: #eff7fc
+}
+
+.divContainer {
+    display: table;
+    width: 100%;
+    border-spacing: 0 5px;
+}
+
+.item {
+    display: table-row;
+}
+
+.item > div {
+    background-color: #ccc;
+    vertical-align:middle;
+    padding: 8px 5px 5px 5px;
+}
+
+.item > div:first-child {
+    border-radius: 10px 0 0 10px;
+    -moz-border-radius: 10px 0 0 10px;
+}
+
+.item > div:last-child {
+    border-radius: 0 10px 10px 0;
+    -moz-border-radius: 0 10px 10px 0;
+}
+
+.itemBody {
+    display: table-cell;
+}
+
 /* ----------------------------------
  * Progress + activities
  * ----------------------------------
@@ -39,11 +75,19 @@ progress[value]::-moz-progress-bar {
 
 /* Animations */
 @keyframes rotate {
-    from { transform: rotate(1deg); }
-    to   { transform: rotate(360deg); }
+    from {
+        transform: rotate(1deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes move {
-    from { background-position: 0 0; }
-    to   { background-position: 1rem 0; }
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1rem 0;
+    }
 }
