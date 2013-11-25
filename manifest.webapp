@@ -4,7 +4,8 @@
     "launch_path": "index.html",
     "description": "Call4Paperz",
     "icons": {
-         "64":  "/images/icons/64.png"
+         "64":  "/images/icons/60.png",
+         "128":  "/images/icons/128.png"
     },
     "developer": {
         "name": "Daniel Passos",
