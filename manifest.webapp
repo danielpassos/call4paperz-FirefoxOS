@@ -1,10 +1,10 @@
 {
     "version": "1.0",
     "name": "Call4Paperz",
-    "launch_path": "index.html",
+    "launch_path": "/index.html",
     "description": "Call4Paperz",
     "icons": {
-         "64":  "/images/icons/60.png",
+         "60":  "/images/icons/60.png",
          "128":  "/images/icons/128.png"
     },
     "developer": {
