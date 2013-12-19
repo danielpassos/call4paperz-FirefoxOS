@@ -1,0 +1,21 @@
+{
+  "name": "call4paperz4FirefoxOS",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielpassos/call4paperz4FirefoxOS.git"
+  },
+  "author": "Daniel Passos <daniel@passos.me>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/danielpassos/call4paperz4FirefoxOS/issues"
+  },
+  "homepage": "https://github.com/danielpassos/call4paperz4FirefoxOS",
+  "keywords": [
+    "call4paperz",
+    "firefoxos"
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  }
+}
