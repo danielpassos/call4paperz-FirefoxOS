@@ -56,12 +56,27 @@ module.exports = function (grunt) {
                     dest: '<%= call4paperz.dist %>'
                 }]
             }
+        },
+
+        handlebars: {
+            options: {
+                namespace: 'Call4Paperz.Templates',
+                processName: function(filePath) {
+                    return filePath.replace(/.*templates\//, '').replace(/\.hbs$/, '');
+                }
+            },
+            all: {
+                files: {
+                    '<%= call4paperz.dist %>/scripts/templates.js': ['<%= call4paperz.app %>/templates/**/*.hbs']
+                }
+            }
         }
     });
 
 
     grunt.registerTask('build', [
         'clean:dist',
+        'handlebars',
         'useminPrepare',
         'concat',
         'uglify',
