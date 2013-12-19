@@ -80,6 +80,21 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+        copy: {
+            dist: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= call4paperz.app %>',
+                    dest: '<%= call4paperz.dist %>',
+                    src: [
+                        '*.{ico,png,txt}',
+                        'images/{,*/}*.png',
+                        'manifest.webapp'
+                    ]
+                }]
+            }
         }
     });
 
@@ -92,6 +107,7 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'htmlmin',
+        'copy:dist',
         'rev',
         'usemin'
     ]);
