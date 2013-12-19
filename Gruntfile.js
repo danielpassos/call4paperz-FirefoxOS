@@ -89,6 +89,7 @@ module.exports = function (grunt) {
         'handlebars',
         'useminPrepare',
         'concat',
+        'cssmin',
         'uglify',
         'htmlmin',
         'rev',
