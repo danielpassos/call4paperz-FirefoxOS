@@ -1,0 +1,20 @@
+  <section role="region">
+      <header>
+          <h1>Events</h1>
+      </header>
+      <div class="divContainer">
+          {{#each events}}
+          <div class="item">
+              <div class="itemBody">
+                  {{#ifIsValidImageURL picture.thumb.url}}
+                  <img src="{{picture.thumb.url}}" width="60" height="60"/>
+                  {{else}}
+                  <img src="images/no-image-cropped.png" width="60" height="60"/>
+                  {{/ifIsValidImageURL}}
+              </div>
+              <div class="itemBody"><a href="#{{id}}" class="event-link">{{name}}</a></div>
+              <div class="itemBody">{{proposals_count}} prop. <br/>{{votes_count}} votes</div>
+          </div>
+          {{/each}}
+      </div>
+  </section>

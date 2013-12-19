@@ -1,0 +1,24 @@
+<section role="region">
+		<header>
+				<a href="#{{event.id}}" class="event-link"><span class="icon icon-back">back</span></a>
+				<h1>Proposals</h1>
+		</header>
+		<div class="divContainer">
+				{{#each event.proposals}}
+				<div class="item">
+						<div class="itemBody">
+								<a href="#" class="proposal-description" data-description="{{description}}"><p
+												class="proposal-title">{{name}}</a></p>
+								<p>{{user.name}}</p>
+						</div>
+						<div class="itemBody">
+								{{#ifPositive acceptance_points}}
+								<div class="votes green">{{acceptance_points}}</div>
+								{{else}}
+								<div class="votes red">{{acceptance_points}}</div>
+								{{/ifPositive}}
+						</div>
+				</div>
+				{{/each}}
+		</div>
+</section>

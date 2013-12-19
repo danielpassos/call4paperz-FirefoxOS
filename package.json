@@ -1,0 +1,33 @@
+{
+  "name": "call4paperz4FirefoxOS",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielpassos/call4paperz4FirefoxOS.git"
+  },
+  "author": "Daniel Passos <daniel@passos.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielpassos/call4paperz4FirefoxOS/issues"
+  },
+  "homepage": "https://github.com/danielpassos/call4paperz4FirefoxOS",
+  "keywords": [
+    "call4paperz",
+    "firefoxos"
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.2.1",
+    "time-grunt": "~0.2.5",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-bower-install": "~0.7.0",
+    "grunt-usemin": "~2.0.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-htmlmin": "~0.1.3",
+    "grunt-contrib-handlebars": "~0.6.0",
+    "grunt-rev": "~0.1.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-copy": "~0.4.1"
+  }
+}
