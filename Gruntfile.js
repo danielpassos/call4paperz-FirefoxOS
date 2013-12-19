@@ -30,12 +30,43 @@ module.exports = function (grunt) {
                 html: '<%= call4paperz.app %>/index.html',
                 ignorePath: '<%= call4paperz.app %>/'
             }
+        },
+
+        useminPrepare: {
+            options: {
+                dest: '<%= call4paperz.dist %>'
+            },
+            html: '<%= call4paperz.app %>/index.html'
+        },
+
+        usemin: {
+            options: {
+                assetsDirs: ['<%= call4paperz.dist %>']
+            },
+            html: ['<%= call4paperz.dist %>/**/*.html'],
+            css: ['<%= call4paperz.dist %>/**/.css']
+        },
+
+        htmlmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= call4paperz.app %>',
+                    src: '*.html',
+                    dest: '<%= call4paperz.dist %>'
+                }]
+            }
         }
     });
 
 
     grunt.registerTask('build', [
-        'clean:dist'
+        'clean:dist',
+        'useminPrepare',
+        'concat',
+        'uglify',
+        'htmlmin',
+        'usemin'
     ]);
 
     grunt.registerTask('default', [
