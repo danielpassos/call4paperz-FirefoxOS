@@ -23,6 +23,13 @@ module.exports = function (grunt) {
                     ]
                 }]
             }
+        },
+
+        'bower-install': {
+            app: {
+                html: '<%= call4paperz.app %>/index.html',
+                ignorePath: '<%= call4paperz.app %>/'
+            }
         }
     });
 
