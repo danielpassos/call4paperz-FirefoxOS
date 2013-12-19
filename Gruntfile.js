@@ -6,13 +6,12 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     grunt.initConfig({
-        
+
         call4paperz: {
             app: 'app',
             dist: 'dist'
         },
 
-        // Empties folders to start fresh
         clean: {
             dist: {
                 files: [{
