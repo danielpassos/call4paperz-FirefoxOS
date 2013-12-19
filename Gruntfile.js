@@ -70,6 +70,16 @@ module.exports = function (grunt) {
                     '<%= call4paperz.dist %>/scripts/templates.js': ['<%= call4paperz.app %>/templates/**/*.hbs']
                 }
             }
+        },
+
+        rev: {
+            dist: {
+                files: {
+                    src: [
+                        '<%= call4paperz.dist %>/{scripts,styles}/*.{js,css,jpg,png}'
+                    ]
+                }
+            }
         }
     });
 
@@ -81,6 +91,7 @@ module.exports = function (grunt) {
         'concat',
         'uglify',
         'htmlmin',
+        'rev',
         'usemin'
     ]);
 
