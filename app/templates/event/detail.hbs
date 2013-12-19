@@ -1,0 +1,37 @@
+<section role="region">
+		<header>
+				<a href="/" class="events-link"><span class="icon icon-back">back</span></a>
+				<menu type="toolbar">
+						<a href="#{{id}}" class="proposals-link"><span class="icon icon-list">proposals</span></a>
+				</menu>
+				<h1>{{name}}</h1>
+		</header>
+		<div id="event-detail">
+				{{#ifIsValidImageURL picture.cropped.url}}
+				<img src="{{picture.cropped.url}}" class="event-logo"/>
+				{{else}}
+				<img src="images/no-image-cropped.png" class="event-logo"/>
+				{{/ifIsValidImageURL}}
+				<p class="event-title">{{name}}</p>
+
+				<p>{{description}}</p>
+				<table>
+						<tr>
+								<td>Data:</td>
+								<td>{{occurs_at}}</td>
+						</tr>
+						<tr>
+								<td>URL:</td>
+								<td>{{url}}</td>
+						</tr>
+						<tr>
+								<td>Twitter:</td>
+								<td>{{twitter}}</td>
+						</tr>
+						<tr>
+								<td>Organize:</td>
+								<td>{{user.name}}</td>
+						</tr>
+				</table>
+		</div>
+</section>

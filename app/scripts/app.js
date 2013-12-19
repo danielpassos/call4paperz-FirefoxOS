@@ -8,20 +8,16 @@ $(function () {
         return (number >= 0) ? options.fn(this) : options.inverse(this);
     });
 
-    var templateEvents = Handlebars.compile($('#events_template').text());
-    var templateEvent = Handlebars.compile($('#event_template').text());
-    var templateProposals = Handlebars.compile($('#proposals_template').text());
-
     function displayEvents(data) {
-        $('#content').empty().append(templateEvents({events: data}));
+        $('#content').empty().append(Call4Paperz.Templates['event/list']({events: data}));
     };
 
     function displayEvent(data) {
-        $('#content').empty().append(templateEvent(data));
+        $('#content').empty().append(Call4Paperz.Templates['event/detail'](data));
     };
 
     function displayProposals(data) {
-        $('#content').empty().append(templateProposals({event: data}));
+        $('#content').empty().append(Call4Paperz.Templates['proposal/detail']({event: data}));
     };
 
     var call4paperzDataManager = AeroGear.DataManager("events");
